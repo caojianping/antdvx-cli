@@ -1,5 +1,5 @@
 # antdv-cli
-基于ant-design-vue、IE9、TypeScript的模板代码生成器，提供命令行工具生成相关模板代码，兼容IE9+浏览器。
+基于ant-design-vue、IE9/IE10、TypeScript的模板代码生成器，提供命令行工具生成相关模板代码，兼容IE9/IE10+浏览器。
 
 ## 安装
 使用 npm:

@@ -8,7 +8,6 @@ const co = require('co');
 
 const copy = require('../lib/copy');
 const generator = require('../lib/generator');
-const templatePath = path.join(__dirname, '../lib/template');
 
 // 预处理项目名称
 function pretreatProjectName(projectName) {
@@ -18,10 +17,7 @@ function pretreatProjectName(projectName) {
     if (list.length) {
         let isExist =
             list.filter(name => {
-                const fileName = path.resolve(
-                    process.cwd(),
-                    path.join('.', name)
-                );
+                const fileName = path.resolve(process.cwd(), path.join('.', name));
                 const isDir = fs.statSync(fileName).isDirectory();
                 return name.indexOf(projectName) !== -1 && isDir;
             }).length !== 0;
@@ -37,15 +33,12 @@ function pretreatProjectName(projectName) {
             .prompt([
                 {
                     name: 'buildCurrent',
-                    message:
-                        '当前目录为空，并且目录名称和项目名称一致，是否直接在当前目录创建新项目？',
+                    message: '当前目录为空，并且目录名称和项目名称一致，是否直接在当前目录创建新项目？',
                     type: 'confirm',
                     default: true
                 }
             ])
-            .then(answer =>
-                Promise.resolve(answer.buildCurrent ? '.' : projectName)
-            );
+            .then(answer => Promise.resolve(answer.buildCurrent ? '.' : projectName));
     } else {
         // 创建以projectName作为名称的目录作为工程根目录
         return Promise.resolve(projectName);
@@ -54,30 +47,49 @@ function pretreatProjectName(projectName) {
 
 module.exports = function init(projectName) {
     return co(function*() {
-        console.log(
-            logSymbols.success,
-            chalk.green(`创建初始化: ${projectName}`)
-        );
-        let name = yield pretreatProjectName(projectName);
+        console.log(logSymbols.success, chalk.green(`创建初始化: ${projectName}`));
+        let name = yield pretreatProjectName(projectName),
+            answers = yield inquirer.prompt([
+                {
+                    name: 'projectName',
+                    message: '项目名称',
+                    default: name
+                },
+                {
+                    name: 'projectVersion',
+                    message: '项目版本号',
+                    default: '1.0.0'
+                },
+                {
+                    name: 'projectDescription',
+                    message: '项目简介',
+                    default: `A project named ${name}`
+                },
+                {
+                    type: 'expand',
+                    message: '请选择项目模板：',
+                    name: 'projectTemplate',
+                    choices: [
+                        {
+                            key: 'd',
+                            name: '默认',
+                            value: 'default'
+                        },
+                        {
+                            key: 'b',
+                            name: '登录模板（蓝色主题）',
+                            value: 'login-blue'
+                        },
+                        // {
+                        //     key: 'r',
+                        //     name: '登录模板（红色主题）',
+                        //     value: 'login-red'
+                        // }
+                    ]
+                }
+            ]),
+            templatePath = path.join(__dirname, '../lib/template-' + answers.projectTemplate);
         copy(templatePath, name);
-
-        let answers = yield inquirer.prompt([
-            {
-                name: 'projectName',
-                message: '项目名称',
-                default: name
-            },
-            {
-                name: 'projectVersion',
-                message: '项目版本号',
-                default: '1.0.0'
-            },
-            {
-                name: 'projectDescription',
-                message: '项目简介',
-                default: `A project named ${name}`
-            }
-        ]);
         yield generator(answers, templatePath, name);
 
         console.log(logSymbols.success, chalk.green('创建成功:)'));

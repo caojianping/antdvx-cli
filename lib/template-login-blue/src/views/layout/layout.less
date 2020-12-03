@@ -1,0 +1,54 @@
+@import '../../less/vars.less';
+@import '../../less/mixins.less';
+
+.layout {
+    height: 100vh;
+
+    .logo {
+        display: block;
+        height: 64px;
+        .font-styles(18px, normal, 64px, rgba(255, 255, 255, 0.65), center);
+        cursor: pointer;
+        .transition(color 0.3s);
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .ant-layout-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        background-color: white;
+
+        .trigger {
+            font-size: 18px;
+            line-height: 64px;
+            padding: 0 24px;
+            cursor: pointer;
+            .transition(color 0.3s);
+
+            &:hover {
+                color: #1890ff;
+            }
+        }
+
+        .welcome {
+            margin-right: 24px;
+            .font-styles(14px, normal, 64px, @black, center);
+
+            .anticon.anticon-logout {
+                font-size: 18px;
+                color: red;
+            }
+        }
+    }
+
+    .ant-layout-content {
+        padding: 0 24px 32px;
+        background-color: #f4f5fa;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
