@@ -1,0 +1,99 @@
+@import './var.less';
+@import './mixin.less';
+
+// 清除浮动样式
+.clearfix {
+  *zoom: 1;
+
+  &:after {
+    display: block;
+    height: 0;
+    content: '';
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
+
+.fl {
+  float: left !important;
+}
+
+.fr {
+  float: right !important;
+}
+
+// flex布局
+.flex {
+  display: flex !important;
+}
+
+// 显示、消失样式
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+// 文本对齐样式
+.align-left {
+  text-align: left !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+// 文本颜色样式
+.text-black {
+  color: @black !important;
+}
+
+.text-gray {
+  color: @gray !important;
+}
+
+.text-red {
+  color: red !important;
+}
+
+.text-orange {
+  color: orange !important;
+}
+
+// 网站样式
+.app-spin {
+  &.ant-spin-nested-loading {
+    height: 100%;
+
+    .ant-spin-container {
+      height: 100%;
+      opacity: 0.88;
+    }
+
+    .ant-spin {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 9999;
+      margin-top: -60px;
+      margin-left: -60px;
+      width: 120px;
+      height: 120px;
+      color: white;
+      border-radius: 4px;
+      background-color: rgba(50, 50, 50, 0.88);
+
+      .ant-spin-dot-item {
+        color: white;
+        background-color: white;
+      }
+    }
+  }
+}

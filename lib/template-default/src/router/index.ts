@@ -7,16 +7,16 @@ import Demo from '../views/demo';
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home
-    },
-    {
-        path: '/demo',
-        name: 'Demo',
-        component: Demo
-    }
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/demo',
+    name: 'Demo',
+    component: Demo,
+  },
 ];
 
 const router = new VueRouter({ mode: 'hash', routes });

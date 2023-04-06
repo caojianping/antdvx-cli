@@ -1,61 +1,56 @@
 {
-    "name": "{{projectName}}",
-    "version": "{{projectVersion}}",
-    "description": "{{projectDescription}}",
-    "private": true,
-    "scripts": {
-        "serve": "vue-cli-service serve --mode dev",
-        "build": "vue-cli-service build --mode prod",
-        "test:unit": "vue-cli-service test:unit",
-        "test:e2e": "vue-cli-service test:e2e",
-        "lint": "vue-cli-service lint"
-    },
-    "dependencies": {
-        "@babel/polyfill": "^7.12.1",
-        "@babel/runtime": "^7.12.5",
-        "ant-design-vue": "^1.7.2",
-        "axios": "^0.21.0",
-        "core-js": "^3.6.5",
-        "jpts-validator": "^1.0.5",
-        "jts-events": "^1.0.1",
-        "jts-storage": "^1.0.4",
-        "register-service-worker": "^1.7.1",
-        "vue": "^2.6.11",
-        "vue-class-component": "^7.2.3",
-        "vue-property-decorator": "^8.4.2",
-        "vue-router": "^3.2.0",
-        "vuex": "^3.4.0",
-        "vuex-class": "^0.3.2"
-    },
-    "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.12.1",
-        "@babel/preset-env": "^7.12.1",
-        "@types/chai": "^4.2.11",
-        "@types/mocha": "^5.2.4",
-        "@vue/cli-plugin-babel": "~4.5.0",
-        "@vue/cli-plugin-e2e-cypress": "~4.5.0",
-        "@vue/cli-plugin-pwa": "~4.5.0",
-        "@vue/cli-plugin-router": "~4.5.0",
-        "@vue/cli-plugin-typescript": "~4.5.0",
-        "@vue/cli-plugin-unit-mocha": "~4.5.0",
-        "@vue/cli-plugin-vuex": "~4.5.0",
-        "@vue/cli-service": "~4.5.0",
-        "@vue/test-utils": "^1.0.3",
-        "babel-plugin-import": "^1.13.1",
-        "chai": "^4.1.2",
-        "less": "^3.0.4",
-        "less-loader": "^5.0.0",
-        "typescript": "~3.9.3",
-        "vue-template-compiler": "^2.6.11"
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not dead"
-    ],
-    "prettier": {
-        "printWidth": 120,
-        "tabWidth": 4,
-        "singleQuote": true
-    }
+  "name": "{{projectName}}",
+  "version": "{{projectVersion}}",
+  "description": "{{projectDescription}}",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --mode dev",
+    "build": "vue-cli-service build --mode prod",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/runtime": "^7.12.5",
+    "ant-design-vue": "^1.7.2",
+    "axios": "^0.21.0",
+    "core-js": "^3.6.5",
+    "jpts-validator": "^1.0.5",
+    "jts-events": "^1.0.1",
+    "jts-storage": "^1.0.4",
+    "register-service-worker": "^1.7.1",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.2",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
+    "vuex-class": "^0.3.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^5.2.4",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-mocha": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/test-utils": "^1.0.3",
+    "babel-plugin-import": "^1.13.1",
+    "chai": "^4.1.2",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "typescript": "~3.9.3",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

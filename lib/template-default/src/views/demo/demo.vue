@@ -1,5 +1,5 @@
 <template>
-    <div>示例页面</div>
+  <div>示例页面</div>
 </template>
 
 <style src="./demo.less" lang="less" scoped />

@@ -21,19 +21,19 @@ import './extends/vue.extend';
 
 import App from '@/App.vue';
 import 'ant-design-vue/dist/antd.less';
-import '@/less/reset.less';
-import '@/less/common.less';
+import '@/styles/reset.less';
+import '@/styles/common.less';
 
 Vue.prototype.moment = moment;
-Vue.prototype.cancelRequest = function() {
-    if (window['cancelAxios']) {
-        window['cancelAxios']();
-    }
+Vue.prototype.cancelRequest = function () {
+  if (window['cancelAxios']) {
+    window['cancelAxios']();
+  }
 };
 Vue.config.productionTip = false;
 
 new Vue({
-    router,
-    store,
-    render: h => h(App)
+  router,
+  store,
+  render: (h) => h(App),
 }).$mount('#app');
