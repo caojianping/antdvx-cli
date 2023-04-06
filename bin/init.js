@@ -111,5 +111,5 @@ module.exports = function init(projectName) {
     console.log(chalk.green('cd ' + projectName));
     console.log(chalk.green('npm install or yarn install'));
     console.log(chalk.green('npm run build'));
-  }).catch((err) => console.log(logSymbols.error, `antdv-cli err: ${err}`));
+  }).catch((err) => console.log(logSymbols.error, `antdvx-cli err: ${err}`));
 };
