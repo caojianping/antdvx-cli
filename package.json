@@ -1,6 +1,6 @@
 {
   "name": "antdvx-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于ant-design-vue、IE9/IE10、TypeScript的模板代码生成器，提供命令行工具生成相关模板代码，兼容IE9/IE10+浏览器。",
   "main": "bin/index.js",
   "bin": {
@@ -8,13 +8,18 @@
   },
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "templates"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "caojianping",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caojianping/antdvx-cli/issues"
+  },
+  "homepage": "https://github.com/caojianping/antdvx-cli#readme",
   "dependencies": {
     "chalk": "^3.0.0",
     "co": "^4.6.0",
@@ -24,6 +29,5 @@
     "inquirer": "^7.0.3",
     "log-symbols": "^3.0.0",
     "metalsmith": "^2.3.0"
-  },
-  "devDependencies": {}
+  }
 }

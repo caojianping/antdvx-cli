@@ -103,7 +103,7 @@ module.exports = function init(projectName) {
           ],
         },
       ]),
-      templatePath = path.join(__dirname, '../lib/template-' + answers.projectTemplate);
+      templatePath = path.join(__dirname, '../templates/template-' + answers.projectTemplate);
     copy(templatePath, name);
     yield generator(answers, templatePath, name);
 
